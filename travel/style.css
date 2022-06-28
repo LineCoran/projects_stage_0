@@ -6,12 +6,13 @@
 }
 
 body {
+    width: 1440px;
+    margin: 0 auto;
     height: 100vh;
     font-size: 1rem;
     font-family: 'Aleo', serif;
     font-family: 'Magra', sans-serif;
     font-family: 'Red Hat Text', sans-serif;
-    margin: 0;
     background-color: var(--background);
     color: var(--white);
 }
@@ -89,7 +90,7 @@ button {
 
 .header-banner {
     display: flex;
-    margin-right: 13.53%;
+    margin-right: 13.87%;
     /* align-items: center; */
     /* margin: 25px 0 34px; */
 }
@@ -409,13 +410,13 @@ main {
     border-radius: 10px;
     color: var(--white);
     background-color: var(--green);
-    transition: 0.2s linear;
+    transition: 0.4s linear;
 }
 
 
 .button__arrow:hover {
-    background-color: rgb(19, 4, 228);
-    color: rgb(255, 255, 255);
+    background-color: rgb(136, 134, 134);
+    color: rgb(17, 16, 38);
  }
 
 .button-icon {
@@ -490,6 +491,7 @@ main {
     border-radius: 16px;
 
     margin-right: 40px;
+    filter: drop-shadow(0px 4px 2px #0d606f);
 }
 
 .place__description {
@@ -587,3 +589,17 @@ main {
     filter: invert(100%) sepia(13%) saturate(7444%) hue-rotate(270deg) brightness(91%) contrast(97%);
 }
 /* *****Footer END***** */
+
+@media (min-width: 1700px) {
+    .description__title {
+        margin-bottom: 15px;
+    }
+
+    .steps__item-text {
+        font-size: 18px;
+    }  
+
+    .button-text {
+        font-size: 22px;
+    }
+}
