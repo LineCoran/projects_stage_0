@@ -589,17 +589,4 @@ main {
     filter: invert(100%) sepia(13%) saturate(7444%) hue-rotate(270deg) brightness(91%) contrast(97%);
 }
 /* *****Footer END***** */
-
-@media (min-width: 1700px) {
-    .description__title {
-        margin-bottom: 15px;
-    }
-
-    .steps__item-text {
-        font-size: 18px;
-    }  
-
-    .button-text {
-        font-size: 22px;
-    }
-}
+/* 
