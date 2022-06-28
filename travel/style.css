@@ -242,7 +242,7 @@ main {
 
 .steps {
     min-width: 100%;
-    margin-top: 254px;
+    margin-top: 256px;
     padding-top: 81px;
     background-color: var(--white);
 }
@@ -312,7 +312,7 @@ main {
     font-family: 'Aleo', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 19px;
     color: var(--orange);
 }
 
@@ -467,7 +467,7 @@ main {
 }
 
 .places__inner {
-    width: 83.33%;
+    width: 83.40%;
     padding-top: 40px;
     padding-bottom: 42px;
 
