@@ -467,7 +467,7 @@ main {
 }
 
 .places__inner {
-    max-width: 83.33%;
+    width: 83.33%;
     padding-top: 40px;
     padding-bottom: 42px;
 
@@ -590,3 +590,4 @@ main {
 }
 /* *****Footer END***** */
 /* 
+@media (max-width: 1700px) {
