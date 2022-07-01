@@ -1,0 +1,270 @@
+@media (max-width: 1440px) {
+    .header__inner::before {
+        background-size: contain;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    
+    .header__inner {
+        justify-content: space-between;
+        padding: 43px 16px;
+        height: auto;
+        width: 100%;
+        background: none;
+        box-shadow: none;
+    }
+    .header-nav__list {
+        display: none;
+    }
+
+    .banner__name {
+        display: none;
+    }
+
+    .header__button {
+        display: none;
+    }
+
+    .preview-title {
+        display: none;
+    }
+
+    .preview-text {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .preview__inner {
+        width: 100%;
+        margin-left: 0px;
+        padding: 20px 15px 0px 15px;
+        
+    }
+
+    .preview-search {
+        padding: 9px 9px 9px 0px;
+    }
+
+    .search__input {
+        margin-left: 16.5px;
+        font-size: 14px;
+        width: 220px
+    }
+
+    .search__button {
+        font-size: 11px;
+        padding: 7.5px 9px;
+    }
+
+    /* STEPS */
+
+    .steps {
+        margin-top: 10px;
+        padding-top: 20px;
+    }
+    .steps__inner {
+        width: 100%;
+        padding: 0 15px 0;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .steps__list {
+        justify-content: space-between;
+    }
+
+    .steps__item {
+        margin: 0px;
+    }
+
+    .steps__item-width247px {
+        align-items: flex-start;
+        width: min-content;
+    }
+
+    .steps__item-width221px {
+        width: max-content;
+    }
+
+    .steps__item-width317px {
+        width: min-content;
+        align-items: flex-end;
+    }
+
+    .steps__item-logo {
+        height: 75px;
+        width: 75px;
+    } 
+
+    .steps__item-text {
+        font-size: 10px;
+    }
+
+    /* DESTINATIONS */
+
+    .destination {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .destination__inner {
+        padding: 0 15px;
+    }
+
+    .title-destination {
+        margin-bottom: 20px;
+    }
+
+    .slider__list {
+        margin: auto;
+        position: relative;
+        width: max-content;
+        margin-bottom: 20px;
+    }
+
+    .slider__item {
+        width: 360px;
+        height: 210px;
+    }
+
+    .contry-name {
+        font-size: 20px;
+        top: 8px;
+    }
+
+    .button__list {
+        display: none;
+    }
+
+    .button__list-slider {
+        display: flex;
+        position: absolute;
+        margin-bottom: 0;
+        bottom: 12px;
+        left:  162px;
+    }
+
+
+    .button__item-slider {
+        width: 8px;
+        height: 8px;
+    }
+
+    .button__list-slider .button__item-slider:not(:last-child) {
+        margin-right: 6px;
+    }
+
+    .button__item-slider-active {
+        opacity: 1;
+    }
+
+    .button__arrow {
+        width: auto;
+        padding: 7.5px 12px;
+    }
+
+
+    .button-text {
+        font-size: 11px;
+    }
+
+
+    .button-icon {
+        margin-right: 6px;
+        height: 10px;
+        width: 10px;
+    }
+
+    .stories__title {
+        margin-bottom: 10px;
+    }
+
+    /* STORIES */
+
+    .places__inner {
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    .places::before {
+        width: 100%;
+        height: 693px;
+    }
+
+    .places__list {
+        margin-bottom: 5px;
+    }
+
+    .place__item {
+        margin-bottom: 15px;
+    }
+
+    .description__title {
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: normal;
+    }
+
+    .description__text {
+        display: block;
+        height: 102px;
+        overflow: hidden;
+        font-size: 9px;
+        line-height: normal;
+    }
+    .place__image {
+        margin-right: 10px;
+        height: 130px;
+        width: 155px;
+    }
+
+    .button__arrow-places {
+        margin-left: 0px;
+        padding: 10px 11.5px;
+    }
+
+    .button-icon-places {
+        margin-left: 0px;
+        margin-right: 6px;
+    }
+
+    /* FOOTER */ 
+
+    .footer__inner {
+        height: 55px;
+        width: 100%;
+        padding: 0 15px;
+        justify-content: center;
+    }
+
+    .footer__course {
+        display: none;
+    }
+
+    .footer__copyright {
+        display: none;
+    }
+    .social__item:not(:last-child) {
+        margin-right: 20px;
+    }   
+
+    .social__list {
+        margin-top: 0px;
+    }
+
+    .social__logo {
+        height: 33.65px;
+        width: 33.65px;
+    }
+}
+
+
