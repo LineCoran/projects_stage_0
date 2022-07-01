@@ -1,0 +1,5 @@
+@media (max-width: 1200px) {
+    .header__inner::before {
+        background-size: contain;
+    }
+}
