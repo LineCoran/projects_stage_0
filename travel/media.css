@@ -28,6 +28,14 @@
         display: none;
     }
 
+    .burger {
+        display: block;
+    }
+
+    .burger__button {
+        display: block;
+    }
+
     .preview-title {
         display: none;
     }

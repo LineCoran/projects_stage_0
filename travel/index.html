@@ -15,13 +15,15 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
     <script src="index.js"></script>
+    <script src="burger.js"></script>
 </head>
 
 <body>
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <a href="https://rolling-scopes-school.github.io/linecoran-JSFEPRESCHOOL2022Q2/travel/ " class="header-banner">
+                <a href="https://rolling-scopes-school.github.io/linecoran-JSFEPRESCHOOL2022Q2/travel/ "
+                    class="header-banner">
                     <img src="assets/head.svg" alt="logo" class="banner__logo" height="30" width="30">
                     <div class="banner__name">Travel Portal</div>
                 </a>
@@ -41,11 +43,43 @@
                         </li>
                     </ul>
                 </nav>
-                
-                    <button class="header__button">
-                        Login
-                    </button>
-                
+
+                <button class="header__button">
+                    Login
+                </button>
+
+                <div class="burger__button burger__button-active">
+                        <div class="burger__button__item"></div>
+                </div>
+
+                <div class="burger" id="burger">
+                    <div class="burger__cross">
+                        <img src="assets\burger__cross.svg" class="burder__cross-icon" height="15" width="15" alt="">
+                    </div>
+                    <nav class="burger__nav">
+                        <ul class="burger__nav__list">
+                            <li class="burger__nav__item">
+                                <a href="#preview" class="burger__nav__link">How It Works</a>
+                            </li>
+                            <li class="burger__nav__item">
+                                <a href="#steps" class="burger__nav__link">Plan Your Trip</a>
+                            </li>
+                            <li class="burger__nav__item">
+                                <a href="#destination" class="burger__nav__link">Destinations</a>
+                            </li>
+                            <li class="burger__nav__item">
+                                <a href="#stories" class="burger__nav__link">Travel Stories</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a href="#stories" class="header-nav__link">Account</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a href="#stories" class="header-nav__link">Social Media</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
             </div>
         </div>
     </header>
@@ -120,10 +154,10 @@
                         <div class="button__item"></div>
                         <div class="button__item button__item-active"></div>
                         <div class="button__item"></div>
-                    </div>                  
+                    </div>
                     <button class="button__arrow">
-                            <img src="assets/arrow.svg" height="40" width="39" alt="arrow" class="button-icon">
-                            <span class="button-text">Find More</span>
+                        <img src="assets/arrow.svg" alt="arrow" class="button-icon">
+                        <span class="button-text">Find More</span>
                     </button>
                 </div>
             </section>
@@ -218,8 +252,9 @@
                                 </div>
                             </div>
                             <button class="button__arrow button__arrow-places">
-                                    <img src="assets/arrow.svg" height="38" width="37" alt="arrow" class="button-icon button-icon-places">
-                                    <span class="button-text button-text-places">See More</span>
+                                <img src="assets/arrow.svg" height="38" width="37" alt="arrow"
+                                    class="button-icon button-icon-places">
+                                <span class="button-text button-text-places">See More</span>
                             </button>
                         </div>
 
@@ -236,12 +271,14 @@
                     <div class="course__list">
                         <div class="course__item">
                             <a href="https://rs.school/js-stage0/" class="course__item-link">
-                                <img src="assets/rs_school_js.svg" height="31" width="100" alt="rsschool__logo" class="course__logo">
+                                <img src="assets/rs_school_js.svg" height="31" width="100" alt="rsschool__logo"
+                                    class="course__logo">
                             </a>
                         </div>
                         <div class="course__item">
                             <a href="https://github.com/LineCoran" class="course__item-link">
-                                <img src="assets/github_logo.svg" height="31" width="31" alt="github__logo" class="course__logo">
+                                <img src="assets/github_logo.svg" height="31" width="31" alt="github__logo"
+                                    class="course__logo">
                             </a>
                         </div>
                     </div>
@@ -254,17 +291,17 @@
                 <div class="footer__social">
                     <ul class="social__list">
                         <li class="social__item">
-                            <a href="https://www.instagram.com/kuzmichev20/" class="social__item-link"> 
+                            <a href="https://www.instagram.com/kuzmichev20/" class="social__item-link">
                                 <img src="assets/inst_logo.svg" alt="instagram__logo" class="social__logo">
                             </a>
                         </li>
                         <li class="social__item">
-                            <a href="https://www.youtube.com/c/RollingScopesSchool" class="social__item-link"> 
+                            <a href="https://www.youtube.com/c/RollingScopesSchool" class="social__item-link">
                                 <img src="assets/youtube_logo.svg" alt="youtube__logo" class="social__logo">
                             </a>
                         </li>
                         <li class="social__item">
-                            <a href="https://twitter.com/rollingscopes" class="social__item-link"> 
+                            <a href="https://twitter.com/rollingscopes" class="social__item-link">
                                 <img src="assets/twitter_logo.svg" alt="twitter__logo" class="social__logo">
                             </a>
                         </li>
