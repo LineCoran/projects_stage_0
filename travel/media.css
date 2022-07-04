@@ -6,7 +6,6 @@
 
 
 @media (max-width: 400px) {
-
     
     .header__inner {
         justify-content: space-between;
@@ -26,6 +25,14 @@
 
     .header__button {
         display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger__button {
+        display: block;
     }
 
     .preview-title {
