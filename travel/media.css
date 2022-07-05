@@ -9,11 +9,15 @@
     
     .header__inner {
         justify-content: space-between;
-        padding: 43px 16px;
+        padding: 45px 15px;
         height: auto;
         width: 100%;
         background: none;
         box-shadow: none;
+    }
+
+    .header__inner::before {
+        background-image: url(assets/mobile_header_bg.png);
     }
     .header-nav__list {
         display: none;
@@ -66,13 +70,13 @@
 
     .search__button {
         font-size: 11px;
-        padding: 7.5px 9px;
+        padding: 7.5px 8px;
     }
 
     /* STEPS */
 
     .steps {
-        margin-top: 10px;
+        margin-top: 60px;
         padding-top: 20px;
     }
     .steps__inner {
@@ -82,10 +86,12 @@
 
     .title {
         font-size: 14px;
+        margin-bottom: 20px;
     }
 
     .steps__list {
         justify-content: space-between;
+        align-items: flex-start;
     }
 
     .steps__item {
@@ -95,6 +101,7 @@
     .steps__item-width247px {
         align-items: flex-start;
         width: min-content;
+        margin-right: 14px;
     }
 
     .steps__item-width221px {
@@ -107,9 +114,25 @@
     }
 
     .steps__item-logo {
-        height: 75px;
-        width: 75px;
+        height: 70px;
+        width: 70px;
+        margin-bottom: 20px;
     } 
+
+    .steps__icon-first {
+        width: 35px;
+        height: 31.5px;
+    }
+
+    .steps__icon-second {
+        width: 35px;
+        height: 35px;
+    }
+
+    .steps__icon-thirth {
+        width: 40px;
+        height: 35px;
+    }
 
     .steps__item-text {
         font-size: 10px;
