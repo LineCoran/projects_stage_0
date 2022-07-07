@@ -10,12 +10,12 @@ button.addEventListener('click', e => {
 });
 
 document.addEventListener('click', e => {
-    let element = e.target;
-    let its_hamburger = element == burger;
-    console.log(its_hamburger);
-    console.log(element);
-    if (burger.classList.contains('burger-active') && !its_hamburger) {
-        burger.classList.remove('burger-active');
-        wrapper.classList.remove('body__wrapper-active');
-    }
+  let element = e.target;
+  let its_hamburger = element == burger;
+  console.log(its_hamburger);
+  console.log(element);
+  if (burger.classList.contains('burger-active') && !its_hamburger) {
+    burger.classList.remove('burger-active');
+    wrapper.classList.remove('body__wrapper-active');
+  }
 })
