@@ -84,10 +84,6 @@ button {
     transition: .2s linear;
 }
 
-
-
-
-
 /* Header start */
 
 .header {
@@ -167,10 +163,6 @@ button {
     height: 20px;
     transition: 0.2s linear;
 }
-
-/* .burger__button-active {
-    display: none;
-} */
 
 .burger__button:hover {
     cursor: pointer;
@@ -338,7 +330,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(256, 256, 256, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 16px;
 }
 
@@ -734,7 +726,6 @@ main {
     display: flex;
     align-items: center;
     margin-right: 10px;
-
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(85deg) brightness(102%) contrast(103%);
 }
 
