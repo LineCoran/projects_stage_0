@@ -8,7 +8,6 @@ let sliderWindow = document.getElementById('slider__list');
 let sliderInner = document.getElementById('slider__inner')
 let length = 0;
 let counter = 1;
-//let buttons = document.getElementsByClassName('button__item-slider');
 let buttons = document.getElementsByClassName('button__item-desktop');
 
 
@@ -96,7 +95,6 @@ function nextClick() {
     sliderInner.append(newElement);
     
     sliderWindow.style.transform = `translateX(${length}px)`;
-//[pre-prev(usa), prev(spain), center(japan), next(usa), later next(spain)]
 
     prev.id = "prePrev";
     center.id ="prev";
