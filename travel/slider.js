@@ -10,8 +10,11 @@ let length = 0;
 let counter = 1;
 let buttons = document.getElementsByClassName('button__item-desktop');
 
+let left = document.getElementById('arrow__left')
+let right = document.getElementById('arrow__right')
 
-console.log(buttons.length)
+
+
 
 function prevClick() {
 
@@ -24,8 +27,7 @@ function prevClick() {
         }
     }
 
-
-    length = length+860;
+    length = length+parseFloat(getComputedStyle(prev).width)+parseFloat(getComputedStyle(prev).marginRight);
    
     laterNext.remove()
 
@@ -64,6 +66,7 @@ function prevClick() {
     center.removeEventListener('click', prevClick);
     prev.addEventListener('click', prevClick)
     next.addEventListener('click', nextClick);
+
 }
 function nextClick() {
     (counter==2)?counter=0:counter++;
@@ -75,7 +78,7 @@ function nextClick() {
         }
     }
 
-    length = length-860;
+    length = length-parseFloat(getComputedStyle(prev).width)+parseFloat(getComputedStyle(prev).marginRight);
    
     prePrev.remove()
 
@@ -120,5 +123,7 @@ function nextClick() {
 
 
 prev.addEventListener('click', prevClick)
+right.addEventListener('click', nextClick)
+left.addEventListener('click', prevClick)
 next.addEventListener('click', nextClick)
 

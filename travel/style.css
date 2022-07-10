@@ -456,7 +456,7 @@ main {
 .destination {
     background-color: var(--white);
     padding-top: 97px;
-    /* overflow: hidden; */
+    overflow: hidden;
     padding-bottom: 80px;
 }
 
@@ -515,6 +515,10 @@ main {
 
 #prev:hover {
     cursor: pointer;
+}
+
+.arrow__list {
+    display: none;
 }
 
 .contry-name {
