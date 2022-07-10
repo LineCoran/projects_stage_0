@@ -472,27 +472,29 @@ main {
 }
 
 .slider__list {
-    width: 2520px;
+    width: max-content;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
+    transition: 0.4s ease-out;
 }
 
-.slider__list .slider__item {
-    margin-right: 60px;
+.slider__list-inner { 
+    display: inline-flex;
 }
-
-.slider__list .slider__item-usa {
-    margin-right: 0px;
-}
-
 
 .slider__item {
     position: relative;
     height: 800px;
-    width: 800px;
+    min-width: 800px;
     border-radius: 16px;
+    margin-right: 60px;
+}
+
+.slider__item:last-child{
+    margin-right: 0;
 }
 
 .slider__item-spain {
@@ -507,6 +509,17 @@ main {
     background: url(assets/usa.jpg) center center / cover no-repeat;
 }
 
+#next:hover {
+    cursor: pointer;
+}
+
+#prev:hover {
+    cursor: pointer;
+}
+
+.arrow__list {
+    display: none;
+}
 
 .contry-name {
     position: absolute;
@@ -540,6 +553,7 @@ main {
     border-radius: 50%;
     background-color: #f2785c;
     opacity: 50%;
+    transition: 0.4s linear;
 }
 
 .button__item-active {
