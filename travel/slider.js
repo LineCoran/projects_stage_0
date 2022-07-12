@@ -1,21 +1,29 @@
-let prePrev  = document.getElementById('prePrev');
-let prev = document.getElementById('prev');
-let center  = document.getElementById('center');
-let next = document.getElementById('next');
-let laterNext  = document.getElementById('laterNext');
-let center2 = document.querySelector('.slider__item-japan');
-let sliderWindow = document.getElementById('slider__list');
-let sliderInner = document.getElementById('slider__inner')
-let length = 0;
-let counter = 1;
-let buttons = document.getElementsByClassName('button__item-desktop');
-
-let left = document.getElementById('arrow__left')
-let right = document.getElementById('arrow__right')
-
-
-
-
+let prev = document.getElementById('prev'),
+    center  = document.getElementById('center'),
+    next = document.getElementById('next'),
+    sliderWindow = document.getElementById('slider__list'),
+    sliderInner = document.getElementById('slider__inner'),
+    length = 0,
+    counter = 1,
+    buttons = document.getElementsByClassName('button__item-desktop'),
+    slides = document.getElementsByClassName('slider__item');
+    left = document.getElementById('arrow__left'),
+    right = document.getElementById('arrow__right');
+function addNameId(arr) {
+    let massive = ['prePrev', 'prev', 'center', 'next', 'laterNext'];
+    for(let i = 0; i< arr.length; i++){
+        arr[i].id = massive[i];
+    }
+}
+function getNewNameOfSlides() {
+    prev = document.getElementById('prev');
+    center  = document.getElementById('center');
+    next = document.getElementById('next');
+    center.removeEventListener('click', nextClick);
+    center.removeEventListener('click', prevClick);
+    prev.addEventListener('click', prevClick)
+    next.addEventListener('click', nextClick);
+}
 function prevClick() {
 
     (counter==0)?counter=2:counter--;
@@ -26,47 +34,14 @@ function prevClick() {
             buttons[i].classList.add('button__item-active');
         }
     }
-
-    length = length+parseFloat(getComputedStyle(prev).width)+parseFloat(getComputedStyle(prev).marginRight);
-   
-    laterNext.remove()
-
-    sliderInner.style.transform = `translateX(${-length}px)`
-    
-    let newElement = document.createElement('div');
-    let classOfCenter = center.className.split(' ');
-    newElement.classList.add(classOfCenter[0]);
-    newElement.classList.add(classOfCenter[1]);
-    newElement.classList.add(classOfCenter[2]);
-    let newElement2 = document.createElement('p');
-    newElement2.classList.add('contry-name');
-    newElement2.innerHTML = classOfCenter[2];
-    newElement.append(newElement2);
-
-
-    sliderInner.prepend(newElement);
-    
+    length = length+widthOfSliderItem();
+    sliderInner.lastElementChild.remove();
+    sliderInner.style.transform = `translateX(${-length}px)`;
+    let newSliderItem = createElement(center);
+    sliderInner.prepend(newSliderItem)
     sliderWindow.style.transform = `translateX(${length}px)`;
-
-    prePrev.id = "prev";
-    prev.id = "center";
-    center.id ="next";
-    next.id = "laterNext";
-    laterNext.id ="prePrev";
-
-    newElement.id = "prePrev";
-
-    prePrev  = document.getElementById('prePrev');
-    prev = document.getElementById('prev');
-    center  = document.getElementById('center');
-    next = document.getElementById('next');
-    laterNext  = document.getElementById('laterNext');
-
-    center.removeEventListener('click', nextClick);
-    center.removeEventListener('click', prevClick);
-    prev.addEventListener('click', prevClick)
-    next.addEventListener('click', nextClick);
-
+    addNameId(slides);
+    getNewNameOfSlides();
 }
 function nextClick() {
     (counter==2)?counter=0:counter++;
@@ -77,51 +52,28 @@ function nextClick() {
             buttons[i].classList.add('button__item-active');
         }
     }
-
-    length = length-parseFloat(getComputedStyle(prev).width)+parseFloat(getComputedStyle(prev).marginRight);
-   
-    prePrev.remove()
-
+    let newSliderItem = createElement(center);
+    length = length-widthOfSliderItem();
+    sliderInner.firstElementChild.remove();
+    sliderInner.append(newSliderItem);
     sliderInner.style.transform = `translateX(${(-1)*length}px)`
-    
+    sliderWindow.style.transform = `translateX(${length}px)`;
+    addNameId(slides);
+    getNewNameOfSlides();
+}
+function widthOfSliderItem() {
+    return parseFloat(getComputedStyle(prev).width)+parseFloat(getComputedStyle(prev).marginRight)
+}
+function createElement(el) {
     let newElement = document.createElement('div');
-    let classOfCenter = center.className.split(' ');
-    newElement.classList.add(classOfCenter[0]);
-    newElement.classList.add(classOfCenter[1]);
-    newElement.classList.add(classOfCenter[2]);
+    let classOfCenter = el.className.split(' ');
+    newElement.classList.add(...classOfCenter);
     let newElement2 = document.createElement('p');
     newElement2.classList.add('contry-name');
     newElement2.innerHTML = classOfCenter[2];
     newElement.append(newElement2);
-
-
-    sliderInner.append(newElement);
-    
-    sliderWindow.style.transform = `translateX(${length}px)`;
-
-    prev.id = "prePrev";
-    center.id ="prev";
-    next.id = "center";
-    laterNext.id ="next";
-
-    newElement.id = "laterNext";
-
-    
-
-    prePrev  = document.getElementById('prePrev');
-    prev = document.getElementById('prev');
-    center  = document.getElementById('center');
-    next = document.getElementById('next');
-    laterNext  = document.getElementById('laterNext');
-
-    
-    center.removeEventListener('click', nextClick);
-    center.removeEventListener('click', prevClick);
-    prev.addEventListener('click', prevClick)
-    next.addEventListener('click', nextClick);
+    return newElement;
 }
-
-
 prev.addEventListener('click', prevClick)
 right.addEventListener('click', nextClick)
 left.addEventListener('click', prevClick)
