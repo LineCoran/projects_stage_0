@@ -422,13 +422,14 @@
 
     .arrow__item {
         height: 28px;
-        opacity: 0.5;
+        opacity: 1;
     }
 
     .arrow__item:hover {
         opacity: 1;
     }
     .arrow__item-left {
+            opacity: 0.5;
            transform: rotate(180deg);
     }
 
@@ -464,11 +465,15 @@
         height: 8px;
     }
 
+    .button__list-slider .button__item-slider {
+        opacity: 0.5;
+    }
+
     .button__list-slider .button__item-slider:not(:last-child) {
         margin-right: 6px;
     }
 
-    .button__item-slider-active {
+    .button__list-slider .button__item-slider:first-child {
         opacity: 1;
     }
 
