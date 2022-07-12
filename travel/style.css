@@ -464,7 +464,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 
 .title-destination {
@@ -511,10 +510,12 @@ main {
 
 #next:hover {
     cursor: pointer;
+    box-shadow: 0 0 44px 10px rgba(0,35,249,0.54);
 }
 
 #prev:hover {
     cursor: pointer;
+    box-shadow: 0 0 44px 10px rgba(0,35,249,0.54);
 }
 
 .arrow__list {
