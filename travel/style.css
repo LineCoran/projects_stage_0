@@ -538,13 +538,14 @@ main {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
+    transform: translateX(10px);
 }
 
 .button__list-slider {
     display: none;
 }
 
-.button__list .button__item:not(:last-child) {
+.button__list .button__item {
     margin-right: 10px;
 }
 
