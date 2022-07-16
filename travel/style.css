@@ -908,6 +908,8 @@ main {
     color: var(--green);
 }
 .account__input {
+    font-size: 22px;
+    outline: none;
     width: 100%;
     height: 56px;
     border: none;
