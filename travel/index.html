@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@700&family=Red+Hat+Text:wght@500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@700&family=Red+Hat+Text:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
@@ -45,7 +45,7 @@
                         </ul>
                     </nav>
 
-                    <button class="header__button">
+                    <button class="header__button" id="header__button">
                         Login
                     </button>
 
@@ -322,10 +322,68 @@
                 </div>
             </div>
         </footer>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup__inner">
+            <h2 class="popup__title" id="popup_title">
+                Log in to your account
+            </h2>
+            <button class="sign-in sign-in-google">
+                <img src="assets/popup_facebook.svg" alt="facebook_logo" class="sign-in-icon">
+                <span class="sign-in-text">
+                    Sign In with Facebook
+                </span>
+            </button>
+            <button class="sign-in sign-in-facebook">
+                <img src="assets/popup_google.svg" alt="google_logo" class="sign-in-icon">
+                <span class="sign-in-text">
+                    Sign In with Google
+                </span>
+            </button>
+            <div class="popup__element">
+                <p class="popup__element-text">
+                    or
+                </p>
+            </div>
+            <div class="popup__account">
+                <div class="account__mail">
+                    <p class="account__text">
+                        E-mail
+                    </p>
+                </div>
+                <input type="text" class="account__input" id="login">
+            </div>
+            <div class="popup__account popup__account-last">
+                <div class="account__mail">
+                    <p class="account__text">
+                        Password
+                    </p>
+                </div>
+                <input type="text" class="account__input"  id="password">
+                <button class="sign-in sign-in-account" id="loginButton">
+                    <span class="sign-in-text sing-in-text-bottom" id="popup_btn">
+                        Sign In
+                    </span>
+                </button>
+                <div class="recovery">
+                    <a href="#" class="recovery-link">
+                        Forgot Your Password?
+                    </a>
+                </div>
+            </div>
+            <div class="popup__footer">
+                <p class="popup__footer-text" id="footer__text">
+                    Don't have an account?
+                </p>
+                <a class="register__link" id="clickToCreate">Register</a>
+            </div>
+            
+        </div>
+    </div>
         <script src="index.js"></script>
         <script src="burder.js"></script>
         <script src="slider.js"></script>
-    </div>
+        <script src="popup.js"></script>
 </body>
 
 </html>
