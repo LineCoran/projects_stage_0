@@ -19,9 +19,10 @@
     const popupButton = document.getElementById('popup_btn');
     const footerText = document.getElementById('footer__text');
     const loginButton = document.getElementById('loginButton');
+    const accountButton = document.getElementById('account_button');
     
     function ChangePopUpWindow(event) {
-        let setOfWords = (event.target.innerHTML != "Register")?loginWindow:createWindow;
+        let setOfWords = (event.target.innerHTML === "Register")?createWindow:loginWindow;
         popup.classList.toggle(popupClassName);
         popupTitle.innerHTML = setOfWords.title;
         popupButton.innerHTML = setOfWords.btn;
@@ -30,6 +31,11 @@
     }
 
     function makePopUpVisible(e){
+        popup.classList.remove(popupClassName);
+        popupTitle.innerHTML = loginWindow.title;
+        popupButton.innerHTML = loginWindow.btn;
+        footerText.innerHTML = loginWindow.footer;
+        popupClick.innerHTML = loginWindow.footerLink;
         e.stopPropagation();
         popup.classList.toggle('popup-visible');
         wrapper.classList.add('body__wrapper-active');
@@ -52,6 +58,7 @@
 
     popupClick.addEventListener('click', ChangePopUpWindow);
     headerButton.addEventListener('click', makePopUpVisible);
+    accountButton.addEventListener('click', makePopUpVisible);
     loginButton.addEventListener('click', alertLoginPassword);
     document.addEventListener('click', makePopUpInvisible);
 }())

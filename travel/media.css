@@ -164,6 +164,39 @@
     .search__button {
         padding: 10px 14px;
     }
+
+    .popup {
+        max-width: 400px;
+    }
+    
+    .popup__title {
+        font-size: 24px;
+    }
+
+    .sign-in {
+        padding: 5px 0;
+    }
+
+    .account__input {
+        height: 34px;
+    }
+
+    .sign-in-text {
+        font-size: 16px;
+    }
+
+    .sign-in-facebook {
+        margin-bottom: 15px;
+    }
+
+    .recovery {
+        margin-bottom: 0;
+    }
+
+    .popup__footer {
+        padding-top: 15px;
+        margin-bottom: 15px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -433,14 +466,18 @@
            transform: rotate(180deg);
     }
 
-    .slider__list {
+    /* .slider__list {
         transform: translateX(20.3%);
-    }
+    } */
 
     .slider__list .slider__item {
         width: 360px;
         max-height: 210px;
     }
+
+    /* .slider__item-spain-visible {
+        order: 4;
+    }  */
 
     .contry-name {
         font-size: 20px;
@@ -463,18 +500,16 @@
     .button__item-slider {
         width: 8px;
         height: 8px;
-    }
-
-    .button__list-slider .button__item-slider {
         opacity: 0.5;
     }
 
-    .button__list-slider .button__item-slider:not(:last-child) {
-        margin-right: 6px;
+    .button__item-active {
+        opacity: 1;
     }
 
-    .button__list-slider .button__item-slider:first-child {
-        opacity: 1;
+
+    .button__list-slider .button__item-slider:not(:last-child) {
+        margin-right: 6px;
     }
 
     .button__arrow {
@@ -609,6 +644,54 @@
         height: 33.65px;
         width: 33.65px;
     }
+
+    .popup {
+        max-width: 320px;
+    }
+    
+    .popup__title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .sign-in {
+        padding: 5px 0;
+    }
+
+    .account__input {
+        height: 24px;
+    }
+
+    .sign-in-text {
+        font-size: 12px;
+    }
+
+    .account__text {
+        font-size: 12px;
+    }
+
+    .sign-in-facebook {
+        margin-bottom: 5px;
+    }
+
+    .popup__footer {
+        padding-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .recovery-link {
+        font-size: 12px;
+    }
+
+    .popup__footer-text {
+        font-size: 12px;
+    }
+
+    .register__link {
+        font-size: 12px;
+    }
+
 }
 
 @media (max-width: 389px) { 
