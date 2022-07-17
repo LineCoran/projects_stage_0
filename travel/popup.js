@@ -31,6 +31,8 @@
     }
 
     function makePopUpVisible(e){
+        
+        document.getElementById("burger").classList.remove('burger-active');
         popup.classList.remove(popupClassName);
         popupTitle.innerHTML = loginWindow.title;
         popupButton.innerHTML = loginWindow.btn;
