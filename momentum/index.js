@@ -1,3 +1,5 @@
+//import date.json;
+
 const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 const greeting = document.querySelector('.greeting');
@@ -86,9 +88,17 @@ async function getWheter() {
     weatherDescription.innerHTML = data.weather[0].description;
 }
 
-getWheter();
-showTime()
-showDate()
+async function getQuotes() {
+    const quotes = 'data.json';
+    const res = await fetch(quotes);
+    const data = await res.json();
+    console.log(data);
+}
+
+getQuotes();
+// getWheter();
+// showTime()
+// showDate()
 showGreeting();
 setBg(randomNum);
 window.addEventListener('beforeunload', setLocaleStorage);
