@@ -2,7 +2,9 @@ const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
-
+const prevSlideButtom = document.querySelector('.slide-prev');
+const nextSlideButtom = document.querySelector('.slide-next');
+const body = document.getElementById('body');
 
 function showTime() {
     const date = new Date;
@@ -20,10 +22,10 @@ function showDate() {
 }
 
 function getTimeOfDay() {
-    const listTimeOfDay = ['morning', 'day', 'evening', 'night'];
+    const listTimeOfDay = ['night', 'morning', 'day', 'evening'];
     const currentDate = new Date;
     const hours = currentDate.getHours();
-    return listTimeOfDay[Math.round(hours/4)];
+    return listTimeOfDay[Math.floor(hours/6)];
 }
 
 function showGreeting() {
@@ -43,8 +45,38 @@ function getLocaleStorage() {
 }
 
 
-showTime()
-showDate()
+//background image
+
+function getRandomNum(){
+     return Math.floor(Math.random()*20+1);
+}
+
+let randomNum = getRandomNum();
+
+function setBg(random) {
+const img = new Image();
+img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${String(random).padStart(2, "0")}.jpg`;
+    img.onload = () => {
+        body.style.background = `url(${img.src})`; 
+    }
+}
+
+function getSlidePrev() {
+    (randomNum==1)?randomNum = 20:randomNum--;
+    setBg(randomNum);
+}
+
+function getSlideNext() {
+    (randomNum==20)?randomNum = 1:randomNum++;
+    setBg(randomNum);
+}
+
+
+// showTime()
+// showDate()
 showGreeting();
+setBg(randomNum);
 window.addEventListener('beforeunload', setLocaleStorage);
 window.addEventListener('load', getLocaleStorage);
+prevSlideButtom.addEventListener('click', getSlidePrev)
+nextSlideButtom.addEventListener('click', getSlideNext)
