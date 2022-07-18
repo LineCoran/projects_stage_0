@@ -1,5 +1,7 @@
 const time = document.querySelector('.time');
 const date = document.querySelector('.date');
+const greeting = document.querySelector('.greeting');
+const name = document.querySelector('.name');
 
 
 function showTime() {
@@ -17,7 +19,32 @@ function showDate() {
     date.innerHTML = currentDate;
 }
 
+function getTimeOfDay() {
+    const listTimeOfDay = ['morning', 'day', 'evening', 'night'];
+    const currentDate = new Date;
+    const hours = currentDate.getHours();
+    return listTimeOfDay[Math.round(hours/4)];
+}
+
+function showGreeting() {
+    const timeOfDay = getTimeOfDay()
+    const greetingText = `Good ${timeOfDay}`;
+    greeting.innerHTML = greetingText;
+}
+
+function setLocaleStorage() {
+    localStorage.setItem('name', name.value)
+}
+
+function getLocaleStorage() {
+    if(localStorage.getItem('name')) {
+        name.value = localStorage.getItem('name');
+    }
+}
+
+
 showTime()
 showDate()
-
-
+showGreeting();
+window.addEventListener('beforeunload', setLocaleStorage);
+window.addEventListener('load', getLocaleStorage);
