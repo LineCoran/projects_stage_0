@@ -1,5 +1,3 @@
-//import date.json;
-
 const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 const greeting = document.querySelector('.greeting');
@@ -11,6 +9,9 @@ const body = document.getElementById('body');
 const weatherIcon = document.querySelector('.weather-icon');
 const weatherTemp = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
+const quoteText = document.querySelector('.quote');
+const quoteAuthor = document.querySelector('.author');
+const quoteButton = document.querySelector('.change-quote');
 
 function showTime() {
     const date = new Date;
@@ -52,11 +53,11 @@ function getLocaleStorage() {
 
 //background image
 
-function getRandomNum(){
-     return Math.floor(Math.random()*20+1);
+function getRandomNum(max){
+     return Math.floor(Math.random()*max+1);
 }
 
-let randomNum = getRandomNum();
+let randomNum = getRandomNum(20);
 
 function setBg(random) {
 const img = new Image();
@@ -88,21 +89,25 @@ async function getWheter() {
     weatherDescription.innerHTML = data.weather[0].description;
 }
 
+//Quotes
+
 async function getQuotes() {
     const quotes = 'data.json';
     const res = await fetch(quotes);
     const data = await res.json();
-    console.log(data);
+    quoteText.innerHTML =  data[getRandomNum(data.length)].text;
+    quoteAuthor.innerHTML =  data[getRandomNum(data.length)].author;
 }
 
-getQuotes();
-// getWheter();
-// showTime()
-// showDate()
+getWheter();
+showTime()
+showDate()
 showGreeting();
 setBg(randomNum);
+getQuotes();
 window.addEventListener('beforeunload', setLocaleStorage);
 window.addEventListener('load', getLocaleStorage);
 prevSlideButtom.addEventListener('click', getSlidePrev)
 nextSlideButtom.addEventListener('click', getSlideNext)
 city.addEventListener('change', getWheter);
+quoteButton.addEventListener('click', getQuotes);
