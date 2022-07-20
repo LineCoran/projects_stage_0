@@ -23,7 +23,7 @@ function showTime() {
 
 function showDate() {
     const dateValue = new Date;
-    const options = { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC'};
+    const options = { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' };
     const currentDate = dateValue.toLocaleDateString('en-EN', options);
     date.innerHTML = currentDate;
 }
@@ -32,7 +32,7 @@ function getTimeOfDay() {
     const listTimeOfDay = ['night', 'morning', 'day', 'evening'];
     const currentDate = new Date;
     const hours = currentDate.getHours();
-    return listTimeOfDay[Math.floor(hours/6)];
+    return listTimeOfDay[Math.floor(hours / 6)];
 }
 
 function showGreeting() {
@@ -46,34 +46,34 @@ function setLocaleStorage() {
 }
 
 function getLocaleStorage() {
-    if(localStorage.getItem('name')) {
+    if (localStorage.getItem('name')) {
         name.value = localStorage.getItem('name');
     }
 }
 
 //background image
 
-function getRandomNum(max){
-     return Math.floor(Math.random()*max+1);
+function getRandomNum(max) {
+    return Math.floor(Math.random() * max + 1);
 }
 
 let randomNum = getRandomNum(20);
 
 function setBg(random) {
-const img = new Image();
-img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${String(random).padStart(2, "0")}.jpg`;
+    const img = new Image();
+    img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${String(random).padStart(2, "0")}.jpg`;
     img.onload = () => {
-        body.style.background = `url(${img.src})`; 
+        body.style.background = `url(${img.src})`;
     }
 }
 
 function getSlidePrev() {
-    (randomNum==1)?randomNum = 20:randomNum--;
+    (randomNum == 1) ? randomNum = 20 : randomNum--;
     setBg(randomNum);
 }
 
 function getSlideNext() {
-    (randomNum==20)?randomNum = 1:randomNum++;
+    (randomNum == 20) ? randomNum = 1 : randomNum++;
     setBg(randomNum);
 }
 
@@ -95,9 +95,78 @@ async function getQuotes() {
     const quotes = 'data.json';
     const res = await fetch(quotes);
     const data = await res.json();
-    quoteText.innerHTML =  data[getRandomNum(data.length)].text;
-    quoteAuthor.innerHTML =  data[getRandomNum(data.length)].author;
+    quoteText.innerHTML = data[getRandomNum(data.length)].text;
+    quoteAuthor.innerHTML = data[getRandomNum(data.length)].author;
 }
+
+// playAudio
+
+const audio = new Audio();
+const audioButtonPlay = document.querySelector('.play');
+const audioButtonPlayNext = document.querySelector('.play-next');
+const audioButtonPlayPrev = document.querySelector('.play-prev');
+console.log(audioButtonPlayNext);
+const audioPlayList = document.querySelector('.play-list');
+let isPlay = false;
+let audioNumber = 0;
+
+function playAudio() {
+    console.log(audioNumber);
+    audio.src = playList[audioNumber].src;
+    console.log(audio.src);
+    audio.currentTime = 0;
+    if(!isPlay) {
+        isPlay = true;
+        audio.play();
+    } else {
+        audio.pause();
+        isPlay = false;
+    }
+    
+}
+
+function playNext() {
+    if (audioNumber==playList.length-1) {
+        audioNumber = 0;
+        console.log(audioNumber);
+    } else {
+        audioNumber++;    
+    }
+    playAudio(audioNumber);
+}
+
+function playPrev() {
+    if (audioNumber==0) {
+        audioNumber = playList.length-1;
+    } else {
+        audioNumber--;    
+    }
+    playAudio(audioNumber);
+}
+
+audioButtonPlayNext.addEventListener('click', playNext);
+audioButtonPlayPrev.addEventListener('click', playPrev);
+audioButtonPlay.addEventListener('click', playAudio);
+
+audioButtonPlay.addEventListener('click', function () {
+    audioButtonPlay.classList.toggle('pause');
+})
+
+import playList from './playList.js';
+
+function createPlayList() {
+        playList.forEach(function (el) {
+            const li = document.createElement('li');
+            li.classList.add('play-item');
+            li.innerHTML = el.title;
+            audioPlayList.append(li);
+        }
+    )
+}
+
+
+createPlayList();
+
 
 getWheter();
 showTime()
