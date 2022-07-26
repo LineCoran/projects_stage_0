@@ -772,7 +772,7 @@ main {
 }
 
 .popup {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, -200%);
@@ -787,7 +787,7 @@ main {
 }
 
 .popup-visible {
-    transform: translate(-50%, 10%);
+    transform: translate(-50%, 5%);
 }
 
 .popup__inner {

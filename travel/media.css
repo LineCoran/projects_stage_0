@@ -462,22 +462,13 @@
         opacity: 1;
     }
     .arrow__item-left {
-            opacity: 0.5;
            transform: rotate(180deg);
     }
-
-    /* .slider__list {
-        transform: translateX(20.3%);
-    } */
 
     .slider__list .slider__item {
         width: 360px;
         max-height: 210px;
     }
-
-    /* .slider__item-spain-visible {
-        order: 4;
-    }  */
 
     .contry-name {
         font-size: 20px;
@@ -661,6 +652,7 @@
 
     .account__input {
         height: 24px;
+        font-size: 14px;
     }
 
     .sign-in-text {
@@ -670,6 +662,7 @@
     .account__text {
         font-size: 12px;
     }
+
 
     .sign-in-facebook {
         margin-bottom: 5px;
@@ -691,6 +684,11 @@
     .register__link {
         font-size: 12px;
     }
+
+    .popup__element-text {
+        font-size: 14px;
+    }
+
 
 }
 
