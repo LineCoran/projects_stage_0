@@ -16,10 +16,21 @@
         <button class="play player-icon"></button>
         <button class="play-next player-icon"></button>
       </div>
+      <div class="audio__container">
+        <p class="track__name">Track name</p>
+      </div>
+      <input class="progress" type="range" min="0" max="100" value="0" id="progress__audio" >
+      <div class="time__container">
+        <p class="exact-time" id="exact-time">00:00</p>
+        <p class="duration-time" id="duration-time">00:00</p>
+      </div>
+      <div class="volume__container">
+        <input class="volume progress" type="range" min="0" max="100" value="20" >
+        <button class="audio-mute">Вкл</button>
+      </div>
       <ul class="play-list"></ul>
     </div>
     <div class="weather">
-      <input type="text" class="city" value="Минск"/>
       <i class="weather-icon owf"></i>
       <div class="weather-error"></div>
       <div class="description-container">
@@ -49,12 +60,6 @@
       <div class="author"></div>
     </div>
   </footer>
-  <script src="assets/js/time.js"></script>
-  <script type="module" src="assets/js/greeting.js"></script>
-  <script type="module" src="assets/js/slider.js"></script>
-  <script src="assets/js/weather.js"></script>
-  <script type="module" src="assets/js/quotes.js"></script>
-  <script type="module" src="assets/js/player.js"></script>
-  <!-- <script type="module" src="index.js"></script> -->
+  <script src="dist/bundle.js"></script>
 </body>
 </html>
