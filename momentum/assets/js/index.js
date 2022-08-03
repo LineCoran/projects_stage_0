@@ -1,8 +1,8 @@
 import getGlobalLanguage from "./globalanguage";
 getGlobalLanguage();
 
-// import showTime from "./time";
-// showTime();
+import showTime from "./time";
+showTime();
 
 import showGreeting from "./greeting";
 showGreeting();
