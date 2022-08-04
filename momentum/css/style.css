@@ -215,6 +215,49 @@ body {
   background-image: url("../assets/svg/play-next.svg");
 }
 
+
+/* SETTING */
+.label {
+  display: flex;
+
+  /* Rounded border */
+  border-radius: 9999px;
+
+  /* Size */
+  height: 32px;
+  width: 64px;
+
+  /* OFF status */
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+
+ 
+}
+
+.label-active {
+   /* ON status */
+   background-color: #357edd;
+   border: 1px solid #357edd;
+   /* Push the circle to the right */
+   justify-content: flex-end;
+}
+
+.label__input {
+  /* Hide the input */
+  display: none;
+}
+
+.label__circle {
+  border-radius: 9999px;
+   width: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  transition: 0.5s linear;
+}
+
+
+/* SETTING END */
+
 .weather {
   display: flex;
   flex-direction: column;

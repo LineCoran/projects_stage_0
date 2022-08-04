@@ -1,7 +1,7 @@
 import showGreeting from "./greeting";
 import getWheter from "./weather";
 import initQuotes from "./quotes";
-import { languageButton } from "./globalanguage";
+import { langButton } from "./setting";
 import showDate from "./date";
 
 
@@ -16,8 +16,9 @@ function translateGreating(){
 
 
 export default function initTraslation() {
-    languageButton.addEventListener('click', function() {
-        languageButton.innerHTML = localStorage.getItem('lang');
+    langButton.addEventListener('click', function(event) {
+        console.log('hello');
+        langButton.parentElement.classList.toggle('label-active');
         translateGreating()
         getWheter();
         initQuotes();
