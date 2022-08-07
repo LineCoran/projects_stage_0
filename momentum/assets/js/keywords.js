@@ -1,5 +1,10 @@
+import { setGlobalKeyWords } from "./setting";
+import { getLinkToImage } from "./slider";
+import { randomNumGlobal } from "./slider";
+
 export const keyWordsInput = document.getElementById('keywords-input');
 const keyWordsList = document.querySelector('.keywords-list');
+const setKeyWordsButton = document.getElementById('setKeyWords');
 const KEY_WORDS = [];
 const MAX_COUNTS_KEY_WORDS = 15;
 // const MAX_WORDS_IN_KEY_WORD = 1;
@@ -7,11 +12,24 @@ const MAX_COUNTS_KEY_WORDS = 15;
 const MIN_LENGTH_OF_WORD = 1;
 
 let globalNewElement;
-
 let keyWordListItems;
 let keyWordsListButtons;
-
 let keyWordsCounter = 0;
+
+export function setKeyWordsToLocaleStorage() {
+    setKeyWordsButton.addEventListener('click', function () {
+        if (KEY_WORDS.length > 0) {
+            localStorage.setItem('keywords', KEY_WORDS);
+        } else {
+            alert('Ключевых слов нет');
+            localStorage.removeItem('keywords');
+            setGlobalKeyWords();
+            setStartKeyWords();
+        }
+        getLinkToImage(randomNumGlobal);
+    })
+}
+
 
 export function definesInputActivity() {
     let currentSourceLink = localStorage.getItem('link');
@@ -64,52 +82,53 @@ function deleteKeyWord() {
                     keyWordsCounter--;
                     return;
                 }
-
             }
-            
+
         })
     }
 
-    
+
+}
+
+function createAndShowKeyWords(keywords) {
+    let word = keywords.trim().replace(/\s+/g, " ");
+    if (word === "") {
+        return;
+    }
+    let time = 1;
+    if (KEY_WORDS.length >= MAX_COUNTS_KEY_WORDS) {
+        alert('Максимальное количество ключевых слов')
+        return;
+    }
+    let words = word.split(' ');
+    if (word.length <= MIN_LENGTH_OF_WORD) {
+        alert('Слишком короткое')
+        return;
+    }
+    for (let i = 0; i < words.length; i++) {
+        let newElement = createKeyWordsComponent(words[i].trim());
+        keyWordsList.append(newElement);
+        KEY_WORDS.push(words[i]);
+        globalNewElement = newElement;
+        setTimeout(function () {
+            newElement.classList.add('keyword-item-visible')
+        }, time)
+        time = time + 100;
+    }
+    keyWordsInput.value = "";
+    deleteKeyWord();
 }
 
 function setKeyWords() {
-    keyWordsInput.addEventListener('change', function (event) {
-        
-        let word = keyWordsInput.value.trim().replace(/\s+/g, " ");
-        if (word === "") {
-            return;
-        }
-        let time = 1;
-        if (KEY_WORDS.length >= MAX_COUNTS_KEY_WORDS) {
-            alert('Максимальное количество ключевых слов')
-            return;
-        }
-        let words = word.split(' ');
-        if (word.length <= MIN_LENGTH_OF_WORD) {
-            alert('Слишком короткое')
-            return;
-        }
-
-        for (let i = 0; i<words.length; i++) {
-            let newElement = createKeyWordsComponent(words[i].trim());
-            keyWordsList.append(newElement);
-            KEY_WORDS.push(words[i]);
-            globalNewElement = newElement;
-            setTimeout(function() {
-            newElement.classList.add('keyword-item-visible')
-        }, time)
-        time = time+100;
-        }
-        
-        keyWordsInput.value = "";
-        
-        deleteKeyWord();
-        
-    })
+    keyWordsInput.addEventListener('change', () => createAndShowKeyWords(keyWordsInput.value));
 }
 
 export default function initKeyWords() {
     definesInputActivity();
     setKeyWords();
+}
+
+export function setStartKeyWords() {
+    let wordsFromLocaleStorage = localStorage.getItem('keywords').replace(/[,]/g, ' ');
+    createAndShowKeyWords(wordsFromLocaleStorage);
 }
