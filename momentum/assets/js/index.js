@@ -27,3 +27,6 @@ initTraslation();
 
 import initSourceImage from "./imageSource";
 initSourceImage();
+
+import initKeyWords from "./keywords";
+initKeyWords();

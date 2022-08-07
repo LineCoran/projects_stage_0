@@ -1,0 +1,29 @@
+.keywords-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.keywords-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyword-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end
+}
+
+.keyword-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background: url(../assets/svg/cross.svg) center center / cover no-repeat;
+}
+
