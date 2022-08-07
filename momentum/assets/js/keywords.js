@@ -1,11 +1,26 @@
-const keyWordsInput = document.getElementById('keywords-input');
+export const keyWordsInput = document.getElementById('keywords-input');
 const keyWordsList = document.querySelector('.keywords-list');
 const KEY_WORDS = [];
+const MAX_COUNTS_KEY_WORDS = 15;
+// const MAX_WORDS_IN_KEY_WORD = 1;
+// const MAX_LENGTH_OF_WORD = 12;
+const MIN_LENGTH_OF_WORD = 1;
+
+let globalNewElement;
 
 let keyWordListItems;
 let keyWordsListButtons;
 
 let keyWordsCounter = 0;
+
+export function definesInputActivity() {
+    let currentSourceLink = localStorage.getItem('link');
+    if (currentSourceLink == 'github') {
+        keyWordsInput.setAttribute('disabled', 'disabled');
+    } else {
+        keyWordsInput.removeAttribute('disabled');
+    }
+}
 
 function createKeyWordsComponent(word) {
 
@@ -32,9 +47,6 @@ function findWordListAndItems() {
     keyWordsListButtons = document.querySelectorAll('.keyword-icon');
 }
 
-
-
-
 function deleteKeyWord() {
 
     findWordListAndItems()
@@ -54,33 +66,50 @@ function deleteKeyWord() {
                 }
 
             }
+            
         })
     }
+
+    
 }
 
-
 function setKeyWords() {
-    keyWordsInput.addEventListener('change', function () {
-        if (KEY_WORDS.length >= 5) {
+    keyWordsInput.addEventListener('change', function (event) {
+        
+        let word = keyWordsInput.value.trim().replace(/\s+/g, " ");
+        if (word === "") {
+            return;
+        }
+        let time = 1;
+        if (KEY_WORDS.length >= MAX_COUNTS_KEY_WORDS) {
             alert('Максимальное количество ключевых слов')
             return;
         }
-
-        if (keyWordsInput.value.split(' ').length > 1 ) {
-            alert('Слишком длинное')
+        let words = word.split(' ');
+        if (word.length <= MIN_LENGTH_OF_WORD) {
+            alert('Слишком короткое')
             return;
         }
-        const newElement = createKeyWordsComponent(keyWordsInput.value);
-        keyWordsList.append(newElement);
-        KEY_WORDS.push(keyWordsInput.value);
+
+        for (let i = 0; i<words.length; i++) {
+            let newElement = createKeyWordsComponent(words[i].trim());
+            keyWordsList.append(newElement);
+            KEY_WORDS.push(words[i]);
+            globalNewElement = newElement;
+            setTimeout(function() {
+            newElement.classList.add('keyword-item-visible')
+        }, time)
+        time = time+100;
+        }
+        
         keyWordsInput.value = "";
-
+        
         deleteKeyWord();
-
+        
     })
 }
 
-
 export default function initKeyWords() {
+    definesInputActivity();
     setKeyWords();
 }
