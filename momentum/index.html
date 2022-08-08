@@ -12,7 +12,7 @@
 </head>
 <body id="body">
   <header class="header">
-    <div class="player">
+    <div class="player" id="player1">
       <div class="player-controls">
         <button class="play-prev player-icon"></button>
         <button class="play player-icon"></button>
@@ -33,7 +33,7 @@
       <ul class="play-list"></ul>
     </div>
 
-    <div class="weather">
+    <div class="weather" id="weather1">
       <i class="weather-icon owf"></i>
       <div class="weather-error"></div>
       <div class="description-container">
@@ -95,31 +95,31 @@
                 <p class="setting__item__text">Widgets</p>
                 <div class="setting__componets">
                     <div class="components__left">
-                        <div class="setting__vidget" id="time">
+                        <div class="setting__vidget" >
                             <div class="vidjet__name">
                                 <img src="assets/svg/time.svg" alt="time-log" width="25" height="25" class="vidget__img">
                                 <p class="vidjet__text">Time</p>
                             </div>
                             <div class="button r" id="button">
-                                <input type="checkbox" class="checkbox" />
+                                <input type="checkbox" class="checkbox" id="time"/>
                                 <div class="knobs"></div>
                                 <div class="layer"></div>
                             </div>
                         </div>
-                        <div class="setting__vidget" id="date">
+                        <div class="setting__vidget">
                             <div class="vidjet__name">
                                 <img src="assets/svg/date.svg" alt="date-log" width="25" height="25" class="vidget__img">
                                 <p class="vidjet__text">Date</p>
                             </div>
 
                             <div class="button r" id="button">
-                                <input type="checkbox" class="checkbox" />
+                                <input type="checkbox" class="checkbox" id="date"/>
                                 <div class="knobs"></div>
                                 <div class="layer"></div>
                             </div>
                         </div>
 
-                        <div class="setting__vidget" id="weather">
+                        <div class="setting__vidget">
                             <div class="vidjet__name">
                                 <img src="assets/svg/weather.svg" alt="weather-log" width="25" height="25"
                                     class="vidget__img">
@@ -127,27 +127,27 @@
                             </div>
 
                             <div class="button r" id="button">
-                                <input type="checkbox" class="checkbox" />
+                                <input type="checkbox" class="checkbox" id="weather">
                                 <div class="knobs"></div>
                                 <div class="layer"></div>
                             </div>
                         </div>
                     </div>
                     <div class="components__right">
-                        <div class="setting__vidget" id="player">
+                        <div class="setting__vidget">
                             <div class="vidjet__name">
                                 <img src="assets/svg/player.svg" alt="player-log" width="25" height="25"
                                     class="vidget__img">
                                 <p class="vidjet__text">Player</p>
                             </div>
                             <div class="button r" id="button">
-                                <input type="checkbox" class="checkbox" />
+                                <input type="checkbox" class="checkbox" id="player">
                                 <div class="knobs"></div>
                                 <div class="layer"></div>
                             </div>
                         </div>
 
-                        <div class="setting__vidget" id="greeting">
+                        <div class="setting__vidget">
                             <div class="vidjet__name">
                                 <img src="assets/svg/greeting.svg" alt="greeting-log" width="25" height="25"
                                     class="vidget__img">
@@ -155,20 +155,20 @@
                             </div>
                             
                             <div class="button r" id="button">
-                                <input type="checkbox" class="checkbox" />
+                                <input type="checkbox" class="checkbox" id="greeting">
                                 <div class="knobs"></div>
                                 <div class="layer"></div>
                             </div>
                         </div>
 
-                        <div class="setting__vidget" id="quotes">
+                        <div class="setting__vidget">
                             <div class="vidjet__name">
                                 <img src="assets/svg/quote.svg" alt="time-log" width="25" height="25" class="vidget__img">
                                 <p class="vidjet__text">Quotes</p>
                             </div>
 
                             <div class="button r" id="button">
-                                <input type="checkbox" class="checkbox" />
+                                <input type="checkbox" class="checkbox" id="quotes">
                                 <div class="knobs"></div>
                                 <div class="layer"></div>
                             </div>
@@ -186,18 +186,20 @@
       <button class="slide-prev slider-icon"></button>
       <button class="slide-next slider-icon"></button>
     </div>
-    <time class="time"></time>
-    <date class="date"></date>
+    <time class="time" id="time1"></time>
+    <date class="date" id="date1"></date>
     <div class="greeting-container">
-      <span class="greeting"></span>
-      <input type="text" class="name" />
+      <span class="greeting" id="greeting1"></span>
+      <input type="text" class="name">
     </div>
   </main>
   <footer class="footer">
-    <button class="change-quote"></button>
+    <div class="quote__wraper" id="quotes1">
+        <button class="change-quote"></button>
     <div>
       <div class="quote"></div>
       <div class="author"></div>
+    </div>
     </div>
   </footer>
   <script src="dist/bundle.js"></script>
