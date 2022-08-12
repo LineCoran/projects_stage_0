@@ -38,5 +38,5 @@ setKeyWordsToLocaleStorage();
 setStartKeyWords();
 clearKeyWordsButton.addEventListener('click', clearAllKeyWords);
 
-import toggleInvisibleClass from "./widjet";
-toggleInvisibleClass();
+import listenerForWidjetsButons from "./widjet";
+listenerForWidjetsButons();
