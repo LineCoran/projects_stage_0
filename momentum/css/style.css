@@ -382,6 +382,7 @@ body {
 
 .weather {
   display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
@@ -527,8 +528,9 @@ body {
 
 .footer {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  /* flex-direction: column; */
+  /* justify-content: flex-end; */
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 20vh;
@@ -547,6 +549,140 @@ body {
 
 .author {
   min-height: 20px;
+}
+
+.todo {
+  position: absolute;
+  top: 50px;
+  left: 500px;
+  width: 20%;
+  min-height: 20vh;
+  margin-left: 30px;
+  margin-right: 13%;
+  background-color: rgba(27, 27, 27, 0.7);
+  border-radius: 10px;
+  
+}
+
+.todo__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 5px;
+
+}
+
+.todo__title {
+  font-size: 18px;
+  width: 100%;
+  border-bottom: 1px solid rgb(116, 112, 112);
+  margin-bottom: 10px;
+}
+
+.todo__input-wrapper {
+  position: relative;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#todoTask {
+  min-width: 70%;
+  height: 30px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+
+.todo__input-wrapper .todo__label {
+  top: 10px;
+}
+
+.todo__button {
+    height: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+    width: 50px;
+    background: #15b700;
+}
+
+.todo__button, .todo__button span {
+	transition: 200ms;
+}
+
+.todo__button__icon {
+  position: absolute;
+    border-left: 1px solid #fff;;
+    padding-left: 6px;
+    transform: translateX(25px);
+	height: 17px;
+	width: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.todo__button:hover .todo__button__icon {
+  border-left: none;
+  transform: translateX(15px);
+}
+
+.todo__tasks {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo__task { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 12px 10px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 3px 0.5px rgb(255 255 255 / 30%);
+}
+
+.todo__task__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.todo__task-button {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: linear 0.2s;
+}
+
+.todo__task-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 5px 1px rgb(255 255 255 / 30%);
+
+}
+
+.todo__task-button-done {
+  margin-right: 10px;
+  background-image: url(/momentum/assets/svg/checked.svg);
+}
+
+.todo__task-button-delete {
+  background-image: url(/momentum/assets/svg/cross.svg);
 }
 
 @media (max-width: 768px) {
